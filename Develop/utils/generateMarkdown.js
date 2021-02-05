@@ -1,32 +1,47 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
+
+const Choices = require("inquirer/lib/objects/choices");
+let mit= '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)'
+
+
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if ('MIT') ![License]('https://img.shields.io/badge/license-MIT-blue.svg');
+function renderLicenseBadge(licenses) {
+  if (licenses==='MIT') {
+    return mit;
+  }
+  renderLicenseSection();
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (license === 'MIT') {
-    return ;
-  } else if (license === 'Apache'){
+function renderLicenseLink(licenses) {
+  if (licenses === 'MIT') {
     return;
-  } else if (license === 'GPL'){
+  } else if (licenses === 'Apache'){
+    return 
+  } else if (licenses=== 'GPL'){
     return;
-  }else if (license === 'BSD'){
+  }else if (licenses === 'BSD'){
     return;
+  } else if (licenses===null){
+    return '';
   }
   
+  renderLicenseBadge();
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(licenses) {
+  if (mit===true) {
+    mit = "## Badge"
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-
+${mit}
 
  ##  Description
  ${data.description}
@@ -57,7 +72,7 @@ function generateMarkdown(data) {
  ## Questions
  If you have any questions about this repo, contact ${data.github}/${data.title}
 
-`}
+`
+}
 renderLicenseLink();
-
 module.exports = generateMarkdown;
