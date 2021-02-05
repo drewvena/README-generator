@@ -28,7 +28,7 @@ function generateMarkdown(data) {
   ${data.badge}
 
  ##  Description
- ${data.description}
+ ###${data.description}
  ---
  ## Table of Contents
  - [Installation](#installation)
@@ -39,26 +39,26 @@ function generateMarkdown(data) {
  -[Questions](#questions)
  ---
  ## Installation
- ${data.dependency}
+ ######${data.dependency}
  --
  ## Usage
- ${data.know}
+ ######${data.know}
  --
  ## License
- This project is licensed under the terms of ${data.licenses}
+ ###### This project is licensed under the terms of ${data.licenses}
  license.
  --
  ## Contributing
-  ${data.about}
+  ###### ${data.about}
  --
  ## Tests
- Run ${data.tests} to run tests.
+ ######Run ${data.tests} to run tests.
  --
  ## Questions
- If you have any questions about this repo, contact ${'https://github.com/' + data.github}/${data.title}
+ ######If you have any questions about this repo, contact ${'https://github.com/' + data.github}/${data.title}
  --
  ## Email
- ${data.email}
+ ######${data.email}
 
 `
 }
