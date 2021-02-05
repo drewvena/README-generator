@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer')
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+
+const {renderLicenseLink,generateMarkdown} = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [{
     type: 'input',
@@ -19,15 +20,8 @@ const questions = [{
 {
     type:'input',
     name:'email',
-    message: 'What is your email address(Required)',
-    validate: emailInput => {
-        if (emailInput) {
-            return true;
-        } else {
-            console.log ('Please enter your E-mail!')
-            return false
-        }
-    }
+    message: 'What is your email address',
+
 },
 {
     type:'input',
@@ -44,7 +38,7 @@ const questions = [{
     type:'list',
     name:'licenses',
     message: 'What kind of license should your project have?',
-    choices: ['MIT', 'Apache', 'GPL', 'BSD'],
+    choices: ['MIT', 'Apache', 'GPL v2', 'GPL v3','MPL 2.0',]
     
 },  
 {
@@ -87,6 +81,9 @@ const writeToFile = (fileName, data) => {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
+    .then(data =>{
+       return renderLicenseLink(data);
+    })
     .then(data => {
     writeToFile('README.md', generateMarkdown(data))
     })
