@@ -40,23 +40,23 @@ function generateMarkdown(data) {
  ---
  ## Installation
  ###### ${data.dependency}
- --
+ 
  ## Usage
  ###### ${data.know}
- --
+ 
  ## License
  ###### This project is licensed under the terms of ${data.licenses}
  ###### license.
- --
+ 
  ## Contributing
   ###### ${data.about}
- --
+ 
  ## Tests
  ###### Run ${data.tests} to run tests.
- --
+ 
  ## Questions
  ###### If you have any questions about this repo, contact ${'https://github.com/' + data.github}/${data.title}
- --
+ 
  ## Email
  ###### ${data.email}
 
