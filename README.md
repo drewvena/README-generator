@@ -28,4 +28,4 @@
  Run npm test to run tests.
  --
  ## Questions
- If you have any questions about this repo, contact drewvena/README.md Generator
+ If you have any questions about this repo, contact drewvena/README-generator
